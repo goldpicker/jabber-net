@@ -885,6 +885,8 @@ namespace jabber.protocol.iq
             {
             }
 
+			#if !__MonoCS__
+
             /// <summary>
             /// The MIME type of the image.  Must be set before
             /// calling Image.set.
@@ -924,6 +926,8 @@ namespace jabber.protocol.iq
                 set { SetElem("TYPE", value.ToString().ToLower()); }
             }
 
+			#endif
+
             /// <summary>
             /// The bytes associated with the picture
             /// </summary>
@@ -938,6 +942,8 @@ namespace jabber.protocol.iq
                 }
                 set { SetElem("BINVAL", Convert.ToBase64String(value)); }
             }
+
+			#if !__MonoCS__
 
             /// <summary>
             /// An Image representation of the bytes in the picture.
@@ -960,6 +966,8 @@ namespace jabber.protocol.iq
                     this.BinVal = ms.GetBuffer();
                 }
             }
+
+#endif
         }
     }
 }

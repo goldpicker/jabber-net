@@ -108,3 +108,4 @@ Backup*/
 UpgradeLog*.XML
 .svn
 .cvsignore
+.DS_Store

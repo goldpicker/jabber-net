@@ -844,10 +844,12 @@ namespace jabber.connection
         /// <summary>
         /// Required designer variable.
         /// </summary>
+#if !__MonoCS__
 #pragma warning disable 0414
         private System.ComponentModel.Container components = null;
 #pragma warning restore 0414
-        private DiscoNode m_root = null;
+#endif
+		private DiscoNode m_root = null;
         private Tree m_items = new Tree();
 
         /// <summary>

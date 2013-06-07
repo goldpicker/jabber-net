@@ -73,9 +73,13 @@ namespace bedrock.net
         private string m_authID = null;
         private X509Certificate m_remote_cert = null;
         private bool m_StartStream = false;
-        private string m_NS;
+        private string m_NS; 
+		#if !__MonoCS__
         private string m_lang = System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag;
-        private XmlDocument m_doc = new XmlDocument();
+		#else
+		private string m_lang;
+		#endif
+		private XmlDocument m_doc = new XmlDocument();
 
         private Uri m_proxyURI = null;
         private NetworkCredential m_proxyCredentials = null;
